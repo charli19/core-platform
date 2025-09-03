@@ -1,50 +1,43 @@
 # Core Platform
 
-Proyecto Spring Boot con H2 en memoria y documentación OpenAPI/Swagger.
+Spring Boot project with Hexagonal Architecture, in-memory H2 database and OpenAPI/Swagger documentation.
 
 ---
 
-## 🚀 Requisitos
+## 🚀 Requirements
+#### Recommended
 
-- Docker ≥ 20.x
-- Docker Compose ≥ 1.29.x
-- Java 17 (solo si quieres correr local sin Docker)
-- Maven (solo si quieres construir el JAR localmente)
+- Docker ≥ 28.3.x
+- Docker Compose ≥ 2.39.x
 
 ---
 
-## 🐳 Docker Compose
+## 🐳 Build and Deploy
 
-1. Construir JAR
+1. Build artifact
 
 ```bash
 ./mvnw clean package
 ````
-2. Levantar contenedor
+2. Launch container
 ```bash
 docker-compose up --build
 ```
 ---
 
-## 🌐 URLs útiles
-
-- **Swagger UI:** [https://core-platform.up.railway.app/swagger-ui/index.html](https://core-platform.up.railway.app/swagger-ui/index.html)
+## 🌐 URLs
+🚀 **CI/CD:** [https://github.com/charli19/core-platform/actions](https://github.com/charli19/core-platform/actions)
+- Set up
+- Compile
+- Unit test
+- E2E test and generate report
+- Package and generate artifact
 ##
-- **H2 Console:** [https://core-platform.up.railway.app/h2-console](https://core-platform.up.railway.app/h2-console)
+📄 **Swagger UI:** [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+##
+🗄️ **H2 Console:** [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 ```bash
 url: jdbc:h2:mem:core
 user: sa
 password:
 ```
-##
-- **CI/CD:** [https://github.com/charli19/core-platform/actions](https://github.com/charli19/core-platform/actions)
-
----
-
-## 💡 Notas
-
-El proyecto está listo para desarrollo local y entorno Docker.
-
-**Swagger UI:** te permite explorar y probar los endpoints de la API fácilmente.
-
-**H2 Console:** es útil para inspeccionar la base de datos en memoria durante pruebas.
