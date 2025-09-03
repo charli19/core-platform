@@ -60,6 +60,12 @@ jobs:
       - name: Run e2e tests
         run: ./mvnw test -B -Dtest=E2EApplicationTests
 
+      - name: Upload Karate report
+        uses: actions/upload-artifact@v3
+        with:
+          name: karate-report
+          path: target/karate-reports/
+
   package:
     name: 📦 Package
     runs-on: ubuntu-latest
