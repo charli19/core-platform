@@ -5,7 +5,7 @@ FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 
 # Copiamos el JAR construido
-COPY target/core-service-0.0.1-SNAPSHOT.jar app.jar
+COPY target/core-platform-0.0.1-SNAPSHOT.jar app.jar
 
 # Puerto de Spring Boot
 EXPOSE 8080

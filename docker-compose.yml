@@ -1,7 +1,7 @@
 services:
   inditex:
     build: .
-    container_name: core-service
+    container_name: core-platform
     ports:
       - "8080:8080"
     restart: unless-stopped
