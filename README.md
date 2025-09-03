@@ -1,4 +1,4 @@
-# Core Service
+# Core Platform
 
 Proyecto Spring Boot con H2 en memoria y documentación OpenAPI/Swagger.
 
