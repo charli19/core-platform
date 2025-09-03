@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -35,8 +36,8 @@ public class PriceEntity {
     @Column(name = "end_date", nullable = false)
     private LocalDateTime endDate;
 
-    @Column(name = "price", nullable = false)
-    private Double price;
+    @Column(name = "price", precision = 15, scale = 2, nullable = false)
+    private BigDecimal price;
 
     @Column(name = "priority", nullable = false)
     private Integer priority;

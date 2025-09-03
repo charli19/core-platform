@@ -1,5 +1,6 @@
 package com.inditex.core.price.domain.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record Price(
@@ -9,7 +10,7 @@ public record Price(
         Long priceList,
         LocalDateTime startDate,
         LocalDateTime endDate,
-        Double price,
+        BigDecimal price,
         Integer priority,
         String currency
 ) {

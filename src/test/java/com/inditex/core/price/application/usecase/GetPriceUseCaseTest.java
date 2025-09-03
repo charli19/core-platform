@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -36,7 +37,7 @@ class GetPriceUseCaseTest extends AbstractApplicationTest {
         priceEntity.setPriceList(1L);
         priceEntity.setStartDate(applicationDate.minusDays(1));
         priceEntity.setEndDate(applicationDate.plusDays(1));
-        priceEntity.setPrice(99.99);
+        priceEntity.setPrice(BigDecimal.valueOf(99.99));
         priceEntity.setPriority(1);
         priceEntity.setCurrency("EUR");
 

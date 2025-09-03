@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -35,7 +36,7 @@ class PriceControllerTest extends AbstractApplicationTest {
                 1L,
                 applicationDate.minusDays(1),
                 applicationDate.plusDays(1),
-                99.99,
+                BigDecimal.valueOf(99.99),
                 1,
                 "EUR"
         );

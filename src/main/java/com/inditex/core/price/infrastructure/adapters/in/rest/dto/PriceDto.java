@@ -1,5 +1,6 @@
 package com.inditex.core.price.infrastructure.adapters.in.rest.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record PriceDto(
@@ -7,7 +8,7 @@ public record PriceDto(
         Long productId,
         LocalDateTime startDate,
         LocalDateTime endDate,
-        Double price,
+        BigDecimal price,
         Long priceList
 ) {
 }
