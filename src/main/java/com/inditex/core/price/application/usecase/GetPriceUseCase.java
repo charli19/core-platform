@@ -5,7 +5,7 @@ import com.inditex.core.price.application.ports.in.GetPricePort;
 import com.inditex.core.price.application.ports.out.PriceRepositoryPort;
 import com.inditex.core.price.domain.exception.PriceNotFoundException;
 import com.inditex.core.price.domain.model.Price;
-import com.inditex.core.price.infrastructure.out.persistence.entity.PriceEntity;
+import com.inditex.core.price.infrastructure.adapters.out.persistence.entity.PriceEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

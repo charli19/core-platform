@@ -1,6 +1,6 @@
-package com.inditex.core.price.infrastructure.adapters.persistence.repository;
+package com.inditex.core.price.infrastructure.adapters.out.persistence.repository;
 
-import com.inditex.core.price.infrastructure.adapters.persistence.entity.PriceEntity;
+import com.inditex.core.price.infrastructure.adapters.out.persistence.entity.PriceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

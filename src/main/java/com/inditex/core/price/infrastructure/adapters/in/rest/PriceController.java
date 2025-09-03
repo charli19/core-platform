@@ -1,8 +1,8 @@
-package com.inditex.core.price.infrastructure.adapters.rest;
+package com.inditex.core.price.infrastructure.adapters.in.rest;
 
 import com.inditex.core.price.application.ports.in.GetPricePort;
 import com.inditex.core.price.domain.model.Price;
-import com.inditex.core.price.infrastructure.adapters.rest.dto.PriceDto;
+import com.inditex.core.price.infrastructure.adapters.in.rest.dto.PriceDto;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
