@@ -1,4 +1,4 @@
-package com.inditex.core.price.infrastructure.in.rest.dto;
+package com.inditex.core.price.infrastructure.adapters.rest.dto;
 
 import java.time.LocalDateTime;
 
