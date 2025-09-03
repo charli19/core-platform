@@ -4,7 +4,7 @@ Spring Boot project with Hexagonal Architecture, in-memory H2 database and OpenA
 
 ---
 
-## 🚀 Requirements
+## 🛠️ Requirements
 #### Recommended
 
 - Docker ≥ 28.3.x
