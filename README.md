@@ -37,7 +37,7 @@ user: sa
 password:
 ```
 ##
-- **CI/CD:** [https://github.com/charli19/core-platform/actions](http://localhost:8080/swagger-ui.html)
+- **CI/CD:** [https://github.com/charli19/core-platform/actions](https://github.com/charli19/core-platform/actions)
 
 ---
 
