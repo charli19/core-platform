@@ -12,14 +12,9 @@ Spring Boot project with Hexagonal Architecture, in-memory H2 database and OpenA
 
 ---
 
-## 🐳 Build and Deploy
+## 🐳 Deploy container
 
-1. Build artifact
-
-```bash
-./mvnw clean package
-````
-2. Launch container
+▶️ Launch application
 ```bash
 docker-compose up --build
 ```
