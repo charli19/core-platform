@@ -14,7 +14,6 @@ Spring Boot project with Hexagonal Architecture, in-memory H2 database and OpenA
 
 ## 🐳 Deploy container
 
-▶️ Launch application
 ```bash
 docker-compose up --build
 ```
