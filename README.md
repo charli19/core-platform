@@ -28,9 +28,9 @@ docker-compose up --build
 
 ## 🌐 URLs útiles
 
-- **Swagger UI:** [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+- **Swagger UI:** [https://core-platform.up.railway.app/swagger-ui/index.html](https://core-platform.up.railway.app/swagger-ui/index.html)
 ##
-- **H2 Console:** [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+- **H2 Console:** [https://core-platform.up.railway.app/h2-console](https://core-platform.up.railway.app/h2-console)
 ```bash
 url: jdbc:h2:mem:core
 user: sa
