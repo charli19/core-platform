@@ -44,7 +44,7 @@ class PriceControllerTest extends AbstractApplicationTest {
 
         when(getPricePort.getPriorityPrice(brandId, productId, applicationDate)).thenReturn(mockPrice);
 
-        ResponseEntity<PriceDto> response = priceController.pricesGet(brandId, productId, applicationDate);
+        ResponseEntity<PriceDto> response = priceController.getPrices(brandId, productId, applicationDate);
 
         assertNotNull(response.getBody());
         assertEquals(brandId, response.getBody().getBrandId());

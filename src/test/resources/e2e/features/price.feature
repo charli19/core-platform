@@ -2,7 +2,7 @@ Feature: Price tests for ZARA - Product 35455
 
   Background:
     * def baseUrl = karate.properties['baseUrl']
-    * def apiPath = '/api/v1/prices'
+    * def apiPath = '/prices'
     * url baseUrl + apiPath
 
   Scenario: Price for product 35455 from ZARA on 2020-06-14 at 10:00
