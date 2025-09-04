@@ -12,7 +12,7 @@ paths:
     get:
       tags:
         - price
-      operationId: getPrices
+      operationId: getPrice
       summary: Obtain priority price by brand, product and application date
       parameters:
         - name: brandId

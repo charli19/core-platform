@@ -20,7 +20,7 @@ public class PriceController implements PricesApi {
     }
 
     @Override
-    public ResponseEntity<PriceDto> getPrices(Long brandId, Long productId, OffsetDateTime applicationDate) {
+    public ResponseEntity<PriceDto> getPrice(Long brandId, Long productId, OffsetDateTime applicationDate) {
         final Price price = getPricePort.getPriorityPrice(brandId, productId, applicationDate);
 
         PriceDto priceDto = new PriceDto();
