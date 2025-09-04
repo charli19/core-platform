@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI 3.0
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api/v1
+tags:
+  - name: price
+    description: Operations about prices
+paths:
+  /price:
+    get:
+      tags:
+        - price
+      summary: Obtain priority price by brand, product and application date
+      parameters:
+        - name: brandId
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+        - name: productId
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+        - name: applicationDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Price found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceDto'
+components:
+  schemas:
+    PriceDto:
+      type: object
+      properties:
+        brandId:
+          type: integer
+          format: int64
+        productId:
+          type: integer
+          format: int64
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        price:
+          type: string
+          format: decimal
+        priceList:
+          type: integer
+          format: int64

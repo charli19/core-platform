@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "prices")
@@ -31,10 +31,10 @@ public class PriceEntity {
     private Long priceList;
 
     @Column(name = "start_date", nullable = false)
-    private LocalDateTime startDate;
+    private OffsetDateTime startDate;
 
     @Column(name = "end_date", nullable = false)
-    private LocalDateTime endDate;
+    private OffsetDateTime endDate;
 
     @Column(name = "price", precision = 15, scale = 2, nullable = false)
     private BigDecimal price;

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleAllExceptions(Exception ex) {
         Map<String, Object> body = new HashMap<>();
         log.error(ex);
-        body.put(TIMESTAMP, LocalDateTime.now());
+        body.put(TIMESTAMP, OffsetDateTime.now());
         body.put(MESSAGE, "Internal server error");
         return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handlePriceNotFound(PriceNotFoundException ex) {
         Map<String, Object> body = new HashMap<>();
         log.error(ex);
-        body.put(TIMESTAMP, LocalDateTime.now());
+        body.put(TIMESTAMP, OffsetDateTime.now());
         body.put(MESSAGE, ex.getMessage());
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
@@ -53,7 +53,7 @@ public class GlobalExceptionHandler {
                         HashMap::putAll);
 
         Map<String, Object> body = new HashMap<>();
-        body.put(TIMESTAMP, LocalDateTime.now());
+        body.put(TIMESTAMP, OffsetDateTime.now());
         body.put(MESSAGE, "Validation failed");
         body.put(ERROR, errors);
 
@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
         errors.put(ex.getName(), buildTypeMismatchMessage(ex));
 
         Map<String, Object> body = new HashMap<>();
-        body.put(TIMESTAMP, LocalDateTime.now());
+        body.put(TIMESTAMP, OffsetDateTime.now());
         body.put(MESSAGE, "Parameter type mismatch");
         body.put(ERROR, errors);
 

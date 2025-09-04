@@ -8,7 +8,7 @@ import com.inditex.core.price.domain.model.Price;
 import com.inditex.core.price.infrastructure.adapters.out.persistence.entity.PriceEntity;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Service
 public class GetPriceUseCase implements GetPricePort {
@@ -23,7 +23,7 @@ public class GetPriceUseCase implements GetPricePort {
     public Price getPriorityPrice(
             Long brandId,
             Long productId,
-            LocalDateTime applicationDate
+            OffsetDateTime applicationDate
     ) {
         PriceEntity priceEntity = priceRepositoryPort.findPriorityPrice(
                 brandId,

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,7 +25,7 @@ class JpaPriceRepositoryAdapterTest extends AbstractApplicationTest {
     void testFindPriorityPrice_Found() {
         Long brandId = 1L;
         Long productId = 100L;
-        LocalDateTime applicationDate = LocalDateTime.now();
+        OffsetDateTime applicationDate = OffsetDateTime.now();
 
         PriceEntity priceEntity = new PriceEntity();
         priceEntity.setId(10L);
@@ -47,7 +47,7 @@ class JpaPriceRepositoryAdapterTest extends AbstractApplicationTest {
     void testFindPriorityPrice_NotFound() {
         Long brandId = 1L;
         Long productId = 100L;
-        LocalDateTime applicationDate = LocalDateTime.now();
+        OffsetDateTime applicationDate = OffsetDateTime.now();
 
         when(jpaPriceRepository.findByBrandAndProductAndApplicationDate(brandId, productId, applicationDate))
                 .thenReturn(Optional.empty());

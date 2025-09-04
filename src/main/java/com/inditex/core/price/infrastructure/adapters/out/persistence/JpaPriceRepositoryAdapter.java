@@ -5,7 +5,7 @@ import com.inditex.core.price.infrastructure.adapters.out.persistence.entity.Pri
 import com.inditex.core.price.infrastructure.adapters.out.persistence.repository.JpaPriceRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Optional;
 
 @Repository
@@ -18,7 +18,7 @@ public class JpaPriceRepositoryAdapter implements PriceRepositoryPort {
     }
 
     @Override
-    public Optional<PriceEntity> findPriorityPrice(Long brandId, Long productId, LocalDateTime applicationDate) {
+    public Optional<PriceEntity> findPriorityPrice(Long brandId, Long productId, OffsetDateTime applicationDate) {
         return jpaPriceRepository.findByBrandAndProductAndApplicationDate(brandId, productId, applicationDate);
     }
 

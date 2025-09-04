@@ -1,15 +1,15 @@
 package com.inditex.core.price.domain.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 public record Price(
         Long id,
         Long brandId,
         Long productId,
         Long priceList,
-        LocalDateTime startDate,
-        LocalDateTime endDate,
+        OffsetDateTime startDate,
+        OffsetDateTime endDate,
         BigDecimal price,
         Integer priority,
         String currency

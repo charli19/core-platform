@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Optional;
 
 public interface JpaPriceRepository extends JpaRepository<PriceEntity, Long> {
@@ -26,7 +26,7 @@ public interface JpaPriceRepository extends JpaRepository<PriceEntity, Long> {
     Optional<PriceEntity> findByBrandAndProductAndApplicationDate(
             @Param("brandId") Long brandId,
             @Param("productId") Long productId,
-            @Param("applicationDate") LocalDateTime applicationDate
+            @Param("applicationDate") OffsetDateTime applicationDate
     );
 
 }

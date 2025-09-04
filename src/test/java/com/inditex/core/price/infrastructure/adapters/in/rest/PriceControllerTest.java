@@ -1,15 +1,16 @@
 package com.inditex.core.price.infrastructure.adapters.in.rest;
 
 import com.inditex.core.AbstractApplicationTest;
+import com.inditex.core.infrastructure.adapters.in.rest.dto.spec.PriceDto;
 import com.inditex.core.price.application.ports.in.GetPricePort;
 import com.inditex.core.price.domain.model.Price;
-import com.inditex.core.price.infrastructure.adapters.in.rest.dto.PriceDto;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.http.ResponseEntity;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -24,38 +25,34 @@ class PriceControllerTest extends AbstractApplicationTest {
     private PriceController priceController;
 
     @Test
-    void testGetPrice_Success() {
+    void priceGet_shouldReturnPriceDto() {
         Long brandId = 1L;
         Long productId = 100L;
-        LocalDateTime applicationDate = LocalDateTime.now();
+        OffsetDateTime applicationDate = OffsetDateTime.now();
 
         Price mockPrice = new Price(
                 10L,
                 brandId,
                 productId,
                 1L,
-                applicationDate.minusDays(1),
-                applicationDate.plusDays(1),
-                BigDecimal.valueOf(99.99),
+                OffsetDateTime.parse("2025-09-01T00:00:00+00:00"),
+                OffsetDateTime.parse("2025-09-30T23:59:59+00:00"),
+                new BigDecimal("99.99"),
                 1,
                 "EUR"
         );
 
-        when(getPricePort.getPriorityPrice(brandId, productId, applicationDate))
-                .thenReturn(mockPrice);
+        when(getPricePort.getPriorityPrice(brandId, productId, applicationDate)).thenReturn(mockPrice);
 
-        PriceDto result = priceController.getPrice(brandId, productId, applicationDate);
+        ResponseEntity<PriceDto> response = priceController.priceGet(brandId, productId, applicationDate);
 
-        assertNotNull(result);
-        assertEquals(brandId, result.brandId());
-        assertEquals(productId, result.productId());
-        assertEquals(mockPrice.price(), result.price());
-        assertEquals(mockPrice.priceList(), result.priceList());
-        assertEquals(mockPrice.startDate(), result.startDate());
-        assertEquals(mockPrice.endDate(), result.endDate());
-
-        verify(getPricePort, times(1))
-                .getPriorityPrice(brandId, productId, applicationDate);
+        assertNotNull(response.getBody());
+        assertEquals(brandId, response.getBody().getBrandId());
+        assertEquals(productId, response.getBody().getProductId());
+        assertEquals(mockPrice.startDate(), response.getBody().getStartDate());
+        assertEquals(mockPrice.endDate(), response.getBody().getEndDate());
+        assertEquals(mockPrice.price(), response.getBody().getPrice());
+        assertEquals(mockPrice.priceList(), response.getBody().getPriceList());
     }
 
 }

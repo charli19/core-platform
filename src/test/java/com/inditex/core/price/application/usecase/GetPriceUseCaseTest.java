@@ -10,7 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,7 +28,7 @@ class GetPriceUseCaseTest extends AbstractApplicationTest {
     void testGetPriorityPrice_Success() {
         Long brandId = 1L;
         Long productId = 100L;
-        LocalDateTime applicationDate = LocalDateTime.now();
+        OffsetDateTime applicationDate = OffsetDateTime.now();
 
         PriceEntity priceEntity = new PriceEntity();
         priceEntity.setId(10L);
@@ -64,7 +64,7 @@ class GetPriceUseCaseTest extends AbstractApplicationTest {
     void testGetPriorityPrice_NotFound() {
         Long brandId = 1L;
         Long productId = 100L;
-        LocalDateTime applicationDate = LocalDateTime.now();
+        OffsetDateTime applicationDate = OffsetDateTime.now();
 
         when(priceRepositoryPort.findPriorityPrice(brandId, productId, applicationDate))
                 .thenReturn(Optional.empty());
