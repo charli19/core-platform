@@ -49,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run unit tests
-        run: ./mvnw -B test
+        run: ./mvnw test
 
   e2e-test:
     name: 🧪 E2E Tests
