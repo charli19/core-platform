@@ -8,7 +8,7 @@ tags:
   - name: price
     description: Operations about prices
 paths:
-  /price:
+  /prices:
     get:
       tags:
         - price
