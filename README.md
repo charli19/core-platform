@@ -19,6 +19,10 @@ docker-compose up --build
 ```
 ---
 
+## ⚙️ API definition
+
+- src/main/resources/api/openapi.yaml
+
 ## 🌐 URLs
 🚀 **CI/CD:** [https://github.com/charli19/core-platform/actions](https://github.com/charli19/core-platform/actions)
 - Set up
